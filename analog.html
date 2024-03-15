@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            height: 500px;
+            width: 500px;
+            background-color: black;
+            margin: auto;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+        }
+
+        .clock {
+            height: 400px;
+            width: 400px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+        }
+        .point{
+            height: 5px;
+            width: 5px;
+            background-color: black;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid black;
+            border-radius: 50%;
+            z-index: 5;
+
+        }
+
+        #hr{
+
+            height: 100px;
+            width: 10px;
+            background-color: cornflowerblue;
+            position: absolute;
+            top: 99px;
+            transform-origin: bottom;
+        }
+        #min{
+            height: 150px;
+            width: 10px;
+            background-color: crimson;
+            position: absolute;
+            top: 50px;
+            transform-origin: bottom;
+        }
+        #sec{
+            height: 170px;
+            width: 10px;
+            background-color: violet;
+            position: absolute;
+            top: 30px;
+            transform-origin: bottom;
+
+        }
+        .a12{
+            position: absolute;
+            top: 0px;
+        }
+        .a6{
+            position: absolute;
+            bottom: 0px;
+        }
+        .a9{
+            position: absolute;
+            left: 0px;
+        }
+        .a3{
+            position: absolute;
+            right: 0px;
+        }
+        .a1{
+
+            position: absolute;
+            right: 100px;
+            top: 25px;
+
+        }
+        .a7{
+
+            position: absolute;
+            left: 100px;
+            bottom: 25px;
+
+        }
+        .a2{
+
+            position: absolute;
+            right: 25px;
+            top: 100px;
+
+        }
+        .a8{
+
+            position: absolute;
+            left: 30px;
+            bottom: 100px;
+
+        }
+        .a11{
+
+            position: absolute;
+            left: 100px;
+            top: 25px;
+
+        }
+        .a10{
+
+            position: absolute;
+            left: 25px;
+            top: 100px;
+
+        }
+        .a4{
+
+            position: absolute;
+            right: 30px;
+            bottom: 100px;
+
+        }
+        .a5{
+
+            position: absolute;
+            right: 100px;
+            bottom: 25px;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="clock">
+            <div class="point"></div>
+            <div id="hr"></div>
+            <div id="min"></div>
+            <div id="sec"></div>
+            <div class="a1">1</div>
+            <div class="a2">2</div>
+            <div class="a3">3</div>
+            <div class="a4">4</div>
+            <div class="a5">5</div>
+            <div class="a6">6</div>
+            <div class="a7">7</div>
+            <div class="a8">8</div>
+            <div class="a9">9</div>
+            <div class="a10">10</div>
+            <div class="a11">11</div>
+            <div class="a12">12</div>
+
+        </div>
+    </div>
+
+    <script>
+
+        setInterval(
+            function clock(){
+
+                date= new Date();
+                hh=date.getHours();
+                mm=date.getMinutes();
+                ss=date.getSeconds();
+                sec.style.transform="rotate("+ ss * 6 + "deg)";
+                min.style.transform="rotate("+ mm * 6 + "deg)";
+                hr.style.transform="rotate("+ ((hh*30)+(mm/2))+ "deg)";
+
+            },1000
+
+        )
+
+    </script>
+</body>
+
+</html>
